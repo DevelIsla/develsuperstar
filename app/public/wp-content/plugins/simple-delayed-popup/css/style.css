@@ -1,0 +1,59 @@
+#sdp-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+#sdp-overlay.sdp-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+#sdp-popup {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+#sdp-overlay.sdp-hidden #sdp-popup {
+    transform: translateY(-20px);
+}
+
+#sdp-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+#sdp-close:hover {
+    color: #000;
+}
+
+.sdp-content {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
